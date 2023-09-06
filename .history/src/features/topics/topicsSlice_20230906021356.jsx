@@ -5,12 +5,11 @@ import {
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: [
+        topic: [
             {
                 id: "123456",
                 name: "name of topic",
                 icon: "icon url",
-                quizIds: [],
             },
         ],
     },

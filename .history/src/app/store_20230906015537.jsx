@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { topicsSlice } from "../features/topics/topicsSlice";
+import { topicsSlice } from '../features/topics/topicsSlice';
 
 const store = configureStore({
     reducer: {

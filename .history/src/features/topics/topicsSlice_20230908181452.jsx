@@ -5,32 +5,26 @@ import {
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {
-            "123456": {
+        topics: [
+            {
                 id: "123456",
                 name: "name of topic",
                 icon: "icon url",
                 quizIds: [],
             },
-        },
+        ],
     },
     reducers: {
         addTopic: (state, action) => {
             const { id, name, icon } = action.payload;
-            state.topics[id] = {
-                id: id,
-                name: name,
-                icon: icon,
-                quizIds: [],
-            };
+            const quizIds = [];
+            state.topics.push({ id, name, icon, quizIds });
         },
-    },
-    extraReducers: {
-        "quizzes/addQuiz": (state, action) => {
+        addQuizId: (state, action) => {
             const { id, name, topicId, cardIds } = action.payload;
-            state.topics[topicId].quizIds.push(id);
-        },
-    }
+            state.topics[topicId].quizIds.push( id );
+        }
+    },
 });
 
 export const selectTopics = state => state.topics.topics;

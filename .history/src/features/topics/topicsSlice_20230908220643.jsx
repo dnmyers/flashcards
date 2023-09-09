@@ -24,13 +24,11 @@ export const topicsSlice = createSlice({
                 quizIds: [],
             };
         },
-    },
-    extraReducers: {
-        "quizzes/addQuiz": (state, action) => {
+        addQuizId: (state, action) => {
             const { id, name, topicId, cardIds } = action.payload;
-            state.topics[topicId].quizIds.push(id);
-        },
-    }
+            state.topics[topicId].quizIds.push( id );
+        }
+    },
 });
 
 export const selectTopics = state => state.topics.topics;

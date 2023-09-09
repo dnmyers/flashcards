@@ -29,7 +29,7 @@ export const topicsSlice = createSlice({
         "quizzes/addQuiz": (state, action) => {
             const { id, name, topicId, cardIds } = action.payload;
             state.topics[topicId].quizIds.push(id);
-        },
+        }
     }
 });
 

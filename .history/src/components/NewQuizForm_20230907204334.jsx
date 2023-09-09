@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import ROUTES from "../app/routes";
 import { selectTopics } from "../features/topics/topicsSlice";
-import { addQuiz } from "../features/quizzes/quizzesSlice";
+
 
 export default function NewQuizForm() {
     const [name, setName] = useState("");
@@ -28,14 +28,7 @@ export default function NewQuizForm() {
 
         const quizId = uuidv4();
 
-        dispatch(
-            addQuiz({
-                id: quizId,
-                name,
-                topicId,
-                cardIds,
-            })
-        );
+        // dispatch add quiz action
 
         navigate(ROUTES.quizzesRoute());
     };

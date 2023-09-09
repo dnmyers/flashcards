@@ -2,7 +2,7 @@ import {
     createSlice
 } from '@reduxjs/toolkit';
 
-const cardsSlice = createSlice({
+export const cardsSlice = createSlice({
     name: "cards",
     initialState: {
         cards: {},
@@ -20,6 +20,16 @@ const cardsSlice = createSlice({
 });
 
 export const selectCards = state => state.cards.cards;
-export const selectCard = (state, cardId) => state.cards.cards[cardId];
+export const selectCard = (state, cardId) => {
+    console.group("selectCard");
+    console.log("state", state);
+    console.log("cardId", cardId);
+    console.log("state.cards", state.cards);
+    console.log("state.cards.cards", state.cards.cards);
+    console.groupEnd();
+
+    return state.cards.cards[cardId]
+};
+export const { addCard } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

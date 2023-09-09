@@ -5,7 +5,14 @@ import {
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {},
+        topics: {
+            "123456": {
+                id: "123456",
+                name: "name of topic",
+                icon: "icon url",
+                quizIds: [],
+            },
+        },
     },
     reducers: {
         addTopic: (state, action) => {
@@ -29,5 +36,4 @@ export const topicsSlice = createSlice({
 
 export const selectTopics = state => state.topics.topics;
 export const { addTopic } = topicsSlice.actions;
-
 export default topicsSlice.reducer;

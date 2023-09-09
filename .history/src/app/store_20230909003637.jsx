@@ -8,7 +8,6 @@ const store = configureStore({
     reducer: {
         topics: topicsSlice.reducer,
         quizzes: quizzesSlice.reducer,
-        cards: cardsSlice.reducer,
     },
 });
 
